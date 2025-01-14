@@ -1,0 +1,17 @@
+diff --git a/src/BeamSetup.cc b/src/BeamSetup.cc
+index efb2b848..8e3d2480 100644
+--- a/src/BeamSetup.cc
++++ b/src/BeamSetup.cc
+@@ -1209,10 +1209,10 @@ PDFPtr BeamSetup::getPDFPtr(int idIn, int sequence, string beam,
+           make_pair("", ""),
+           make_pair("", "")
+         };
++        if      (pMode == 1) pWord = "LHAPDF5:" + pMap[pSet - 1].first;
++        else if (pMode == 2) pWord = "LHAPDF6:" + pMap[pSet - 1].second;
++        else if (pMode == 3) pWord = "LHAGrid1:" + pMap[pSet - 1].second;
+         pSet = 0;
+-        if      (pMode == 1) pWord = "LHAPDF5:" + pMap[pSet + 1].first;
+-        else if (pMode == 2) pWord = "LHAPDF6:" + pMap[pSet + 1].second;
+-        else if (pMode == 3) pWord = "LHALHAGrid1:" + pMap[pSet + 1].second;
+       }
+     }
